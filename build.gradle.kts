@@ -3,7 +3,7 @@ plugins {
     `maven-publish`
 }
 
-group = "me.phelix.klibrary"
+group = "me.phelix"
 version = "1.0.0"
 
 repositories {
@@ -16,6 +16,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("net.prosavage:BasePlugin:1.7.4")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT")
+    implementation("com.google.code.gson:gson:2.8.6")
 }
 
 val sourcesJar by tasks.creating(Jar::class) {
