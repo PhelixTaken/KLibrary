@@ -1,26 +1,26 @@
 package me.phelix.klibrary.files.gson
 
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import me.phelix.klibrary.extensions.*
 import me.phelix.klibrary.files.gson.adapters.InventoryTypeAdapter
 import me.phelix.klibrary.files.gson.adapters.LocationTypeAdapter
-import net.prosavage.baseplugin.serializer.Persist
 import org.bukkit.Location
 import org.bukkit.inventory.Inventory
 import java.io.File
 import java.lang.Exception
 import java.lang.IllegalStateException
 import java.lang.reflect.Type
-import java.nio.file.Files
 import java.nio.file.Path
-import java.util.logging.Logger
 
 class Persist(private val dataFolder: File) {
 
     private val gson = buildGson().create()
     private val gsonData = buildDataGson().create()
 
+    /** Load a json file
+     * @param type The type you want to deserialize to
+     * @param path The path u want to deserialize
+     */
     fun <T> load(type: Type, path: Path): T {
         val content = path.readString()
         try {
@@ -30,6 +30,11 @@ class Persist(private val dataFolder: File) {
         }
     }
 
+    /** Saves to a json file
+     * @param data If you want data
+     * @param instance What you want to serialize
+     * @param path The path
+     */
     fun save(data: Boolean, instance: Any, path: Path) {
         val gson = if(data) gsonData else this.gson
         try {
@@ -41,10 +46,20 @@ class Persist(private val dataFolder: File) {
         }
     }
 
+    /** Saves to a json file
+     * @param data If you want data
+     * @param instance What you want to serialize
+     * @param path The path that starts where the jar is located
+     */
     fun save(data: Boolean, instance: Any, path: String) {
         save(data, instance, Path.of(".${File.separator}$path"))
     }
 
+    /** Saves to a json file
+     * @param data If you want data
+     * @param instance What you want to serialize
+     * @param path The path that starts where data folder of a spigot plugin is located
+     */
     fun saveDataFolder(data: Boolean, instance: Any, path: String) {
         val dataPath = Path.of(".${File.separator}$dataFolder")
         if(!dataPath.exists())
