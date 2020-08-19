@@ -14,6 +14,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation("commons-codec:commons-codec:1.10:sources")
+    implementation("commons-codec:commons-codec:1.10:javadoc")
 //    implementation("net.prosavage:BasePlugin:1.7.4")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT")
     implementation("com.google.code.gson:gson:2.8.6")
