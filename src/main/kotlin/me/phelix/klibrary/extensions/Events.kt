@@ -1,4 +1,4 @@
-package me.phelix.klibrary
+package me.phelix.klibrary.extensions
 
 import org.bukkit.event.Event
 import org.bukkit.event.EventPriority
