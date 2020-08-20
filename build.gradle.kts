@@ -48,6 +48,11 @@ publishing {
     }
 }
 
+tasks.jar {
+    archiveFileName.set("${project.name}-${project.version}.jar")
+    destinationDirectory.set(file("/Users/bunyaminduduk/IdeaProjects/Renting/Server/plugins/"))
+    from(configurations["runtimeClasspath"].map(::zipTree))
+}
 
 tasks {
     compileKotlin {
