@@ -8,8 +8,9 @@ class PlayerHandler <V> {
 
     val map = mutableMapOf<UUID, V>()
 
-    fun getPlayer(name: String): Player? = map[Bukkit.getPlayer(name)?.uniqueId] as Player
-    fun getPlayer(id: UUID): Player? = map[Bukkit.getPlayer(id)?.uniqueId] as Player
-    fun getPlayerStringId(id: String): Player? = map[Bukkit.getPlayer(UUID.fromString(id))?.uniqueId] as Player
+    fun getPlayer(name: String): V? = map[Bukkit.getPlayer(name)?.uniqueId]
+    fun getPlayer(id: UUID): V? = map[Bukkit.getPlayer(id)?.uniqueId]
+    fun getPlayer(player: Player): V? = map[player.uniqueId]
+    fun getPlayerStringId(id: String): V? = map[Bukkit.getPlayer(UUID.fromString(id))?.uniqueId]
 
 }

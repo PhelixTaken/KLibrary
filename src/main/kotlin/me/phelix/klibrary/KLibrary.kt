@@ -12,13 +12,13 @@ class KLibrary : JavaPlugin() {
         val list = mutableListOf<String>()
         Bukkit.getPluginManager().registerEvents(MenuListener(), this)
         Bukkit.getPluginManager().plugins.forEach {
-            if(it.description.depend.contains(name) || it.description.softDepend.contains(name)) {
+            if (it.description.depend.contains(name) || it.description.softDepend.contains(name)) {
                 contains = true
                 list.add(it.name)
             }
         }
 
-        if(contains) {
+        if (contains) {
             println("KLibrary has found plugin(s) that use this as dependency")
             list.forEach {
                 println("- $it")
