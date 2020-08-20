@@ -10,6 +10,7 @@ class KLibrary : JavaPlugin() {
         Bukkit.getPluginManager().registerEvents(MenuListener(), this)
         var contains = false
         val list = mutableListOf<String>()
+        Bukkit.getPluginManager().registerEvents(MenuListener(), this)
         Bukkit.getPluginManager().plugins.forEach {
             if(it.description.depend.contains(name) || it.description.softDepend.contains(name)) {
                 contains = true
