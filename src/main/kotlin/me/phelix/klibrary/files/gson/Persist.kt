@@ -36,11 +36,11 @@ class Persist(private val dataFolder: File) {
      * @param path The path
      */
     fun save(data: Boolean, instance: Any, path: Path) {
-        val gson = if(data) gsonData else this.gson
+        val newGson = if(data) gsonData else this.gson
         try {
             if(!path.exists())
                 path.createFile()
-            path.write(gson.toJson(instance).toByteArray())
+            path.write(newGson.toJson(instance).toByteArray())
         } catch (e: Exception) {
             e.printStackTrace()
         }

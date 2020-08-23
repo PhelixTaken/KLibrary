@@ -16,6 +16,8 @@ dependencies {
     compileOnly("commons-codec:commons-codec:1.10:sources")
     compileOnly("commons-codec:commons-codec:1.10:javadoc")
     compileOnly("com.google.code.gson:gson:2.8.6")
+    implementation("com.github.jhg023:SimpleNet:1.6.5")
+    implementation("org.apache.logging.log4j:log4j-core:2.13.2")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT")
 }
 
@@ -50,7 +52,7 @@ publishing {
 
 tasks.jar {
     archiveFileName.set("${project.name}-${project.version}.jar")
-    destinationDirectory.set(file("/Users/bunyaminduduk/IdeaProjects/Renting/Server/plugins/"))
+    destinationDirectory.set(file("C:\\Users\\bun12\\IdeaProjects\\Renting\\Server\\plugins\\"))
     from(configurations["runtimeClasspath"].map(::zipTree))
 }
 
