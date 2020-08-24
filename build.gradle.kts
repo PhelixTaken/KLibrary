@@ -3,7 +3,7 @@ plugins {
     `maven-publish`
 }
 
-group = "me.phelix"
+group = "me.phelix.lib"
 version = "1.0.0"
 
 repositories {
@@ -40,7 +40,6 @@ publishing {
         create<MavenPublication>("maven") {
             artifact(sourcesJar)
             artifact(javadocJar)
-
             from(components["java"])
         }
     }
@@ -49,10 +48,11 @@ publishing {
         mavenLocal()
     }
 }
-
+//
 tasks.jar {
     archiveFileName.set("${project.name}-${project.version}.jar")
-    destinationDirectory.set(file("C:\\Users\\bun12\\IdeaProjects\\Renting\\Server\\plugins\\"))
+//    destinationDirectory.set(file("C:\\Users\\bun12\\IdeaProjects\\Renting\\Server\\plugins\\"))
+    destinationDirectory.set(file("/home/phelix/IdeaProjects/Renting/Server/plugins/"))
     from(configurations["runtimeClasspath"].map(::zipTree))
 }
 
