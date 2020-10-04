@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.PhelixTaken"
-version = "1.0-SNAPSHOT"
+version = "v0.1.6-alpha"
 
 repositories {
     mavenCentral()
