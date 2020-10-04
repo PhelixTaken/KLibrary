@@ -9,6 +9,7 @@ version = "v0.1.6-alpha"
 
 repositories {
     mavenCentral()
+    jcenter()
     maven ("https://papermc.io/repo/repository/maven-public/")
 }
 
@@ -53,7 +54,7 @@ dependencies {
 
 tasks.jar {
     archiveFileName.set("${project.name}-${project.version}.jar")
-    destinationDirectory.set(file("C:\\Users\\bun12\\IdeaProjects\\System\\Server\\plugins\\"))
+    destinationDirectory.set(file("C:/Users/bun12/IdeaProjects/System/Server/plugins/"))
     from(configurations["runtimeClasspath"].map(::zipTree))
 }
 
