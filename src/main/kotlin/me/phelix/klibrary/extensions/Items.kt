@@ -7,9 +7,8 @@ import org.bukkit.inventory.meta.ItemMeta
 inline fun item(
         material: Material,
         amount: Int = 1,
-        data: Short = 0,
         meta: ItemMeta.() -> Unit = {}
-): ItemStack = ItemStack(material, amount, data).meta(meta)
+): ItemStack = ItemStack(material, amount).meta(meta)
 
 inline fun <reified T : ItemMeta> ItemStack.meta(
         block: T.() -> Unit
@@ -20,18 +19,10 @@ fun ItemStack.displayName(displayName: String): ItemStack = meta<ItemMeta> {
     setDisplayName(displayName)
 }
 
-val item = item(Material.DIAMOND).apply {
-    amount = 5
-    meta<ItemMeta> {
-        displayName("Sd")
-        lore = arrayListOf("j")
-    }
-}
-
-
-//val item = item(Material.AIR) {
-//    amount = 10
-//    meta {
-//        setDisplayName("sd")
+//val item = item(Material.DIAMOND).apply {
+//    amount = 5
+//    meta<ItemMeta> {
+//        displayName("Sd")
+//        lore = arrayListOf("j")
 //    }
 //}

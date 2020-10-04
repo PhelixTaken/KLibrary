@@ -19,6 +19,7 @@ class LocationTypeAdapter : JsonSerializer<Location>, JsonDeserializer<Location>
         } catch (e: Exception) {
             e.printStackTrace()
         }
+
         return jsonObject
     }
 
@@ -32,5 +33,5 @@ class LocationTypeAdapter : JsonSerializer<Location>, JsonDeserializer<Location>
         }
         return null
     }
-
 }
+

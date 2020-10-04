@@ -18,6 +18,7 @@ dependencies {
     compileOnly("com.google.code.gson:gson:2.8.6")
     implementation("com.github.jhg023:SimpleNet:1.6.5")
     implementation("org.apache.logging.log4j:log4j-core:2.13.2")
+    implementation("org.mongodb:mongodb-driver:3.12.7")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT")
 }
 

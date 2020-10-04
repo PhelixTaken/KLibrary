@@ -12,5 +12,5 @@ class PlayerHandler <V> {
     fun getPlayer(id: UUID): V? = map[Bukkit.getPlayer(id)?.uniqueId]
     fun getPlayer(player: Player): V? = map[player.uniqueId]
     fun getPlayerStringId(id: String): V? = map[Bukkit.getPlayer(UUID.fromString(id))?.uniqueId]
-
+    
 }

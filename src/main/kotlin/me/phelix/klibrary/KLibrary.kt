@@ -10,6 +10,7 @@ class KLibrary : JavaPlugin() {
         Bukkit.getPluginManager().registerEvents(MenuListener(), this)
         var contains = false
         val list = mutableListOf<String>()
+
         Bukkit.getPluginManager().plugins.forEach {
             if (it.description.depend.contains(name) || it.description.softDepend.contains(name)) {
                 contains = true
@@ -26,7 +27,7 @@ class KLibrary : JavaPlugin() {
             println("KLibrary has not found any plugin using this as dependency so we are disabling this library to save performance!")
             Bukkit.getPluginManager().disablePlugin(this)
         }
-
     }
+
 
 }
