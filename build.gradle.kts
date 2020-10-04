@@ -4,7 +4,7 @@ plugins {
 //    `maven-publish`
 }
 
-group = "me.phelix"
+group = "com.github.PhelixTaken"
 version = "1.0-SNAPSHOT"
 
 repositories {
