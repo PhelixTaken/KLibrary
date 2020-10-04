@@ -1,7 +1,7 @@
 plugins {
     kotlin("jvm") version "1.4.10"
     maven
-//    `maven-publish`
+    `maven-publish`
 }
 
 group = "com.github.PhelixTaken"
