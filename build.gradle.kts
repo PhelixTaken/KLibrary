@@ -52,12 +52,12 @@ dependencies {
 //    }
 //}
 
-tasks.jar {
-    archiveFileName.set("${project.name}-${project.version}.jar")
-    destinationDirectory.set(file("C:/Users/bun12/IdeaProjects/System/Server/plugins/"))
-    from(configurations["runtimeClasspath"].map(::zipTree))
-}
-
+//tasks.jar {
+//    archiveFileName.set("${project.name}-${project.version}.jar")
+//    destinationDirectory.set(file("C:/Users/bun12/IdeaProjects/System/Server/plugins/"))
+//    from(configurations["runtimeClasspath"].map(::zipTree))
+//}
+//
 tasks {
     compileKotlin {
         kotlinOptions.jvmTarget = "11"
