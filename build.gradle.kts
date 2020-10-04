@@ -1,10 +1,10 @@
 plugins {
-    kotlin("jvm") version "1.4.0"
-    `maven-publish`
+    kotlin("jvm") version "1.4.10"
+//    `maven-publish`
 }
 
-group = "me.phelix.lib"
-version = "1.0.0"
+group = "me.phelix"
+version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -21,39 +21,38 @@ dependencies {
     implementation("org.mongodb:mongodb-driver:3.12.7")
     compileOnly("com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT")
 }
-
-val sourcesJar by tasks.creating(Jar::class) {
-    archiveClassifier.set("sources")
-
-    from(sourceSets["main"].allSource)
-    dependsOn(JavaPlugin.CLASSES_TASK_NAME)
-}
-
-val javadocJar by tasks.creating(Jar::class) {
-    archiveClassifier.set("javadoc")
-
-    from(tasks.javadoc)
-    dependsOn(JavaPlugin.JAVADOC_TASK_NAME)
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            artifact(sourcesJar)
-            artifact(javadocJar)
-            from(components["java"])
-        }
-    }
-
-    repositories {
-        mavenLocal()
-    }
-}
 //
+//val sourcesJar by tasks.creating(Jar::class) {
+//    archiveClassifier.set("sources")
+//
+//    from(sourceSets["main"].allSource)
+//    dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+//}
+//
+//val javadocJar by tasks.creating(Jar::class) {
+//    archiveClassifier.set("javadoc")
+//
+//    from(tasks.javadoc)
+//    dependsOn(JavaPlugin.JAVADOC_TASK_NAME)
+//}
+//
+//publishing {
+//    publications {
+//        create<MavenPublication>("mavenJava") {
+//            artifact(sourcesJar)
+//            artifact(javadocJar)
+//            from(components["java"])
+//        }
+//    }
+//
+//    repositories {
+//        mavenLocal()
+//    }
+//}
+
 tasks.jar {
     archiveFileName.set("${project.name}-${project.version}.jar")
-//    destinationDirectory.set(file("C:\\Users\\bun12\\IdeaProjects\\Renting\\Server\\plugins\\"))
-    destinationDirectory.set(file("/home/phelix/IdeaProjects/Renting/Server/plugins/"))
+    destinationDirectory.set(file("C:\\Users\\bun12\\IdeaProjects\\System\\Server\\plugins\\"))
     from(configurations["runtimeClasspath"].map(::zipTree))
 }
 
