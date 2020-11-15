@@ -21,7 +21,7 @@ dependencies {
     implementation("com.github.jhg023:SimpleNet:1.6.5")
     implementation("org.apache.logging.log4j:log4j-core:2.13.2")
     implementation("org.mongodb:mongodb-driver:3.12.7")
-    compileOnly("com.destroystokyo.paper:paper-api:1.16.1-R0.1-SNAPSHOT")
+    compileOnly("com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT")
 }
 //
 //val sourcesJar by tasks.creating(Jar::class) {
@@ -52,11 +52,11 @@ dependencies {
 //    }
 //}
 
-//tasks.jar {
-//    archiveFileName.set("${project.name}-${project.version}.jar")
-//    destinationDirectory.set(file("C:/Users/bun12/IdeaProjects/System/Server/plugins/"))
-//    from(configurations["runtimeClasspath"].map(::zipTree))
-//}
+tasks.jar {
+    archiveFileName.set("${project.name}-${project.version}.jar")
+    destinationDirectory.set(file("C:/Users/bun12/IdeaProjects/System/Server/plugins/"))
+    from(configurations["runtimeClasspath"].map(::zipTree))
+}
 //
 tasks {
     compileKotlin {

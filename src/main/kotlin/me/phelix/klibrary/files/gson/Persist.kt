@@ -73,7 +73,6 @@ class Persist(private val dataFolder: File) {
             128, 64).registerTypeAdapter(Location::class.java, LocationTypeAdapter()).registerTypeAdapter(Inventory::class.java, InventoryTypeAdapter())
     }
 
-
     private fun buildDataGson(): GsonBuilder {
         return GsonBuilder().disableHtmlEscaping().enableComplexMapKeySerialization().excludeFieldsWithModifiers(
             128, 64).registerTypeAdapter(Location::class.java, LocationTypeAdapter()).registerTypeAdapter(Inventory::class.java, InventoryTypeAdapter())
